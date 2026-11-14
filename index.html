@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tamagotchi</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥚</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="intro">
+      <p class="eyebrow">a tiny virtual pet</p>
+      <h1>Tamagotchi</h1>
+    </header>
+
+    <div class="device">
+      <div class="ring" aria-hidden="true"></div>
+      <p class="logo">TAMAGO</p>
+      <p id="nameplate" class="nameplate">A new egg</p>
+
+      <div class="bezel">
+        <div id="screen" class="screen">
+          <div class="screen-top">
+            <span id="stageLabel">Egg</span>
+            <span id="ageLabel"></span>
+          </div>
+          <p id="growthLabel" class="growth"></p>
+
+          <div id="stats" class="stats" hidden>
+            <div class="stat"><span>Food</span><div class="bar"><div id="barHunger"></div></div></div>
+            <div class="stat"><span>Joy</span><div class="bar"><div id="barHappy"></div></div></div>
+            <div class="stat"><span>Rest</span><div class="bar"><div id="barEnergy"></div></div></div>
+            <div class="stat"><span>Clean</span><div class="bar"><div id="barHygiene"></div></div></div>
+            <div class="stat"><span>Hp</span><div class="bar"><div id="barHealth"></div></div></div>
+          </div>
+
+          <div id="eggProgress" class="stats" hidden>
+            <div class="stat"><span>Warm</span><div class="bar"><div id="barEgg"></div></div></div>
+          </div>
+
+          <div class="scene">
+            <button type="button" id="pet" aria-label="Your pet"></button>
+            <div id="poops"></div>
+            <div id="fx"></div>
+          </div>
+
+          <p id="message" class="message">Name the egg to begin</p>
+
+          <div id="minigame" hidden>
+            <div class="track" id="track">
+              <div class="zone"></div>
+              <div id="marker">★</div>
+            </div>
+            <p id="playScore" class="play-score"></p>
+          </div>
+
+          <div id="submenu" class="submenu" hidden>
+            <button type="button" id="btnMeal">Meal</button>
+            <button type="button" id="btnSnack">Snack</button>
+            <button type="button" id="btnCancelFeed">Cancel</button>
+          </div>
+
+          <div id="overlay" class="overlay" hidden>
+            <form id="namePanel">
+              <p class="overlay-title">Name your egg</p>
+              <input id="nameInput" maxlength="14" placeholder="Mochi" autocomplete="off" aria-label="Pet name">
+              <button type="submit">Start</button>
+              <p id="recordLine" class="record" hidden></p>
+            </form>
+            <div id="deathPanel" hidden>
+              <p class="overlay-title">Back to the garden</p>
+              <p id="deathText"></p>
+              <p id="deathRecord" class="record"></p>
+              <button type="button" id="btnAgain">Hatch a new egg</button>
+              <button type="button" id="btnRename">Pick a new name</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button type="button" id="btnFeed">Feed</button>
+        <button type="button" id="btnPlay">Play</button>
+        <button type="button" id="btnClean">Clean</button>
+        <button type="button" id="btnSleep">Sleep</button>
+      </div>
+    </div>
+
+    <p class="help">Feed, play, clean, and let them sleep. Needs drop over time, including while the tab is closed. Keys: F, P, C, S, and Space to catch.</p>
+    <div class="extra">
+      <button type="button" id="btnSound">Sound on</button>
+      <button type="button" id="btnRelease" hidden>New egg</button>
+    </div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
